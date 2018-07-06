@@ -1,10 +1,10 @@
 # Inspired by @productionwentdown and @abiosoft.
-FROM resin/raspberrypi3-golang:1.8 as build
+FROM aapit/alpine-golang-raspberrypi3 as build
 
 ARG version="0.11.0"
 ARG plugins="route53,cors,expires,cache"
 
-RUN apt install git
+RUN apk add --no-cache git
 
 # caddy
 RUN git clone https://github.com/mholt/caddy -b "v${version}" /go/src/github.com/mholt/caddy \
