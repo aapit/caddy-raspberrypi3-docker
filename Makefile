@@ -10,4 +10,5 @@ ifneq (${CURRENT_CPU_ARCH}, ${TARGET_CPU_ARCH})
 	@exit 1
 else
 	docker build ${GITHUB_URL} -t ${DOCKER_IMAGE}
+	docker build --no-cache .
 endif
